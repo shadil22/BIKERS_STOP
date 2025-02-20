@@ -1,22 +1,25 @@
 # BIKERS_STOP
-Project Overview: BIKERS_STOP
 
-Data Import and Querying
-•	Imported an Excel file into SQL Server.
-•	Executed a SQL query to extract essential data:
+## Project Goals
+This project aims to analyze bike share data to understand ridership patterns, revenue, and profit.
 
-WITH cte AS (
-SELECT * FROM bike_share_yr_0
-UNION
-SELECT * FROM bike_share_yr_1
-)
-SELECT dteday, season, a.yr, hr, weekday, riders, rider_type, price, COGS,
-riders * price AS revenue,
-riders * price - COGS * riders AS profit
-FROM cte a
-LEFT JOIN cost_table b ON a.yr = b.yr;
+## Data Sources
+bike_share_yr_0.csv`: Data for the first year.
+bike_share_yr_1.csv`: Data for the second year.
+cost_table.csv`: Cost data associated with the bike share program.
 
-Dashboard Creation
+## Tools Used
+- **SQL Server**: For data import and querying.
+- **Power BI**: For data visualization and dashboard creation.
 
-•	Connected SQL Server to Power BI.
-•	Designed and developed a dashboard to visualize the data.
+## How to Use
+1. Clone the repository.
+2. Import the data into SQL Server.
+3. Run the provided SQL query to extract the necessary data.
+4. Connect the SQL Server to Power BI and load the data.
+5. Explore the dashboard for insights.
+
+   ## Files
+SQLQuery1.sql`: SQL query to extract essential data from the bike share datasets.
+bikers_stop.pbix`: Power BI file containing the dashboard.
+insights.pdf`: A PDF report summarizing the insights derived from the data.
